@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<Persona>
+
+@if (Model is not null)
+{
+    @foreach (var persona in Model)
+    {
+        <div class="text-center">
+            <h1 class="display-4"> @persona.Nombre (@persona.Edad)</h1>
+            <h2>@persona.Descripcion</h2>
+
+            <img src="~/img/fotoPerfil.jpeg" id="foto" alt="Foto Perfil" />
+        </div>
+
+        <div class="text-center">
+            <img id="imagen-dotnet" src="~/img/dotnet-imagen-2.png" alt="logo dotnet" />
+        </div>
+
+        <div class="row justify-content-center text-center bg-primary">
+            <div class="col col-md-7 seccion-bienvenida">
+                <h1>@persona.TituloDes</h1>
+                <p>
+                    @persona.PortaDes
+                </p>
+            </div>
+
+        </div>
+
+    }
+    
+}
+
+

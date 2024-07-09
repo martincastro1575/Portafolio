@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Persona>
+
+
+
+@if (Model is not null){
+    @foreach(var personas in Model)
+    {
+        <div style="margin-top:-105px;">
+
+            <div class="row justify-content-md-center text-center">
+                <div class="col col-3 bg-white habilidades" style="border-radius: 15px 0 0 15px; box-shadow: 0 5px 5px 0 gray;">
+                    <i class="bi bi-hdd-fill"></i>
+                    <h3>Back-End</h3>
+
+                    <p>@personas.TituloBackEnd</p>
+
+                    <p class="text-primary cabecera">
+                        Stack:
+                    </p>
+
+                    <p>
+                        ASP.NET Core, SQL Server
+                    </p>
+
+                    <p class="text-primary cabecera">
+                        Experiencia:
+                    </p>
+
+                    <ul>
+                        @foreach (var habilidad in personas.HabilidadesBackend)
+                        {
+                            <li>@habilidad</li>
+
+                        }
+
+                    </ul>
+
+                </div>
+
+                <div class="col col-3 bg-white habilidades" style="border-radius: 0 15px 15px 0; box-shadow: 0 5px 5px 0 gray;">
+                    <i class="bi bi-code-slash"></i>
+                    <h3>Front-End</h3>
+                    <p>@personas.TituloFrontEnd</p>
+
+                    <p class="text-primary cabecera">
+                        Stack:
+                    </p>
+
+                    <p>
+                        React, NodeJS, Blazor
+                    </p>
+
+                    <p class="text-primary cabecera">
+                        Experiencia:
+                    </p>
+
+                    <ul>
+                        @foreach (var habilidad in personas.HabilidadesFrontend)
+                        {
+                            <li>@habilidad</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    }
+
+    
+
+
+}
+
+
